@@ -2,10 +2,27 @@ import * as THREE from 'three';
 import { Canvas } from '@react-three/fiber';
 import { MeshWobbleMaterial, OrbitControls } from '@react-three/drei';
 import Sphere from './shapes/sphere';
+import { useEffect } from 'react';
 
 const ThreeJS = () => {
 
-  const sphereSize = Math.min(window.innerWidth, window.innerHeight) / 400;
+  let sphereSize = Math.min(window.innerWidth, window.innerHeight) / 400;
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Update sphereSize based on new window dimensions
+      sphereSize = Math.min(window.innerWidth, window.innerHeight) / 400;
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      console.log(sphereSize);
+    };
+    
+  }, []);
+
   return (
     <>
       <Canvas
