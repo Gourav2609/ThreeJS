@@ -4,6 +4,8 @@ import { MeshWobbleMaterial, OrbitControls } from '@react-three/drei';
 import Sphere from './shapes/sphere';
 
 const ThreeJS = () => {
+
+  const sphereSize = Math.min(window.innerWidth, window.innerHeight) / 400;
   return (
     <>
       <Canvas
@@ -13,7 +15,7 @@ const ThreeJS = () => {
         {/* <directionalLight position={[0, 0, 2]} /> */}
         <ambientLight intensity={10} />
 
-        <Sphere position={[0, 0, 0]} args={[2, 64, 32]} color={"green"} text="Three JS" />
+        <Sphere position={[0, 0, 0]} args={[sphereSize, 64, 32]} color={"green"} text="Three JS" />
         <OrbitControls enableZoom={false}/>
       </Canvas>
     </>
