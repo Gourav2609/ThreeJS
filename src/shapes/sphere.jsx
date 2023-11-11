@@ -29,8 +29,8 @@ const Sphere = ({ position, args, color ,text }) => {
               // scale={isClicked ? 1.5 : 1}
         >
             <sphereGeometry args={args} />
-            <meshStandardMaterial color={isHovered ? "white" : "white"} map={texture}  />
-            {/* <MeshWobbleMaterial factor={15} speed={4} color={"red"} /> */}
+            {/* <meshStandardMaterial color={isHovered ? "white" : "white"} map={texture}  /> */}
+            <MeshWobbleMaterial factor={1} speed={4} map={texture} />
         </mesh>
         </group>
     );
