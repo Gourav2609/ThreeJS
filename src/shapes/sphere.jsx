@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { MeshWobbleMaterial } from "@react-three/drei";
 import { TextureLoader } from "three";
-import myTextureImage from "../../assests/Group.png"
+import myTextureImage from "../../assests/Logo.png"
 
 
 const Sphere = ({ position, args, color ,text }) => {
